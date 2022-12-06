@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "/Gg+Sh88xBoWwHnpQRwjkBgI9QULWeecen0NZMB/JmI=",
+  "Source": "Blog",
+  "BasePath": "_content/Blog",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Blog\\wwwroot",
+      "Source": "Blog",
+      "ContentRoot": "C:\\Projects\\tutorials\\dotnet core\\Blog\\Blog\\wwwroot\\",
+      "BasePath": "_content/Blog",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

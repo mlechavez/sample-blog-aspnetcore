@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Post>
+
+<section class="section">
+  <div class="container">
+	<h2>Manage your posts</h2>
+
+	<div class="posts-container">
+	  <div class="activity-section">
+		<a class="btn btn-primary" asp-action="createorupdatepost" asp-route-id="new">Create a new post</a>
+	  </div>
+	  <div class="content-section">
+		<table class="table table-hover">
+		  <thead>
+			<tr>
+			  <th>Title</th>
+			  <th>Action</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			@foreach (var post in Model) {
+				<tr id="post-@post.Id">
+					<td>@post.Title</td>
+					<td>
+					<a class="btn btn-primary" asp-controller="admin" asp-action="createorupdatepost" asp-route-id="@post.Id">Edit</a> 
+					<button class="btn btn-danger btnDeletePost" data-id="@post.Id" data-title="@post.Title" data-url="/admin/posts/deletepost/@post.Id">Delete</button>
+					</td>
+				</tr>
+			}
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+  </div>
+</section>
+
+
+@section scripts {
+	<script>
+	  document.addEventListener('DOMContentLoaded', (event) => {
+		  let deleteButtons = document.querySelectorAll('.btnDeletePost');
+		  deleteButtons.forEach((button) => {
+			  button.addEventListener('click', (e) => {
+				  if (confirm(`Are you sure you want to delete the ${e.target.dataset.title}?`)) {
+					  let url = `${window.location.origin}${e.target.dataset.url}`;
+					  fetch(url, {
+						  method: 'DELETE'
+					  })
+						  .then(response => response.json())
+						  .then(data => {
+							  if (data) {
+								  let tr = document.querySelector(`#post-${e.target.dataset.id}`);
+								  tr.remove();
+							  }
+						  })
+						  .catch(error => console.error(error));
+				  }
+			  })
+		  })
+
+	  })
+	</script>
+}

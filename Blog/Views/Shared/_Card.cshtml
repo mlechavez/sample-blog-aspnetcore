@@ -1,0 +1,17 @@
+﻿@model Post
+
+@{
+	var imagePath = $"image/{Model.Image}";
+}
+<div class="card">
+	@if (!string.IsNullOrEmpty(imagePath)) {
+	  <a asp-controller="posts" asp-action="getpostdetail" asp-route-id="@Model.Id">
+		<img class="card-image-top" src="@imagePath" alt="@Model.Title" />
+	  </a>
+	}
+  <div class="card-body">
+	<h4>@Model.Title</h4>
+	<p>@Model.Summary</p>
+	<a class="card-link-bottom" asp-controller="posts" asp-action="getpostdetail" asp-route-id="@Model.Id">Read more...</a>
+  </div>
+</div>

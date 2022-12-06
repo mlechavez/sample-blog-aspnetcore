@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tv3508UbKKMiHYJR1YXc5ASPFLRQBTP7KB4a6fZrIIWlcYLd6qe23Y78H06hdefPEYxcb82r+/F/ltdTVyZ+UA==",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\tutorials\\dotnet core\\Blog\\WebApplication1\\WebApplication1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lester\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
+  ],
+  "logs": []
+}

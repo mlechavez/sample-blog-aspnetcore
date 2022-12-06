@@ -1,0 +1,19 @@
+﻿@model PostViewModel
+
+
+  <div class="post-container">
+	<div class="post-image">
+	@if (!string.IsNullOrEmpty(Model.ImageUrl)) {
+		var path = $"/image/{Model.ImageUrl}";
+		<img src="@path" />
+	}
+	</div>
+	<div class="container">
+	  <h2>@Model.Title</h2>
+	  @Html.Raw(Model.Body)
+	</div>
+  </div>
+
+
+
+

@@ -1,0 +1,25 @@
+﻿@model HomeViewModel
+
+<div class="home-header">
+  <div class="container">
+	<h1>Awesome Blog Site</h1>
+  </div>
+</div>
+
+<div class="section">
+  <div class="container">
+	<h2 class="headline">Recent Posts</h2>
+  </div>
+  <div class="container">
+	<div class="row">
+		@foreach (var item in Model.Posts) {
+			<div class="col">
+				<partial name="~/views/shared/_card.cshtml" model="item" />
+			</div>
+		}
+	</div>
+  </div>
+</div>
+<ul>
+</ul>
+

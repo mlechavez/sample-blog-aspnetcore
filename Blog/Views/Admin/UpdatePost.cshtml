@@ -1,0 +1,37 @@
+﻿@model PostViewModel
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/ui/trumbowyg.min.css" integrity="sha512-Zi7Hb6P4D2nWzFhzFeyk4hzWxBu/dttyPIw/ZqvtIkxpe/oCAYXs7+tjVhIDASEJiU3lwSkAZ9szA3ss3W0Vug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<section class="section">
+  <div class="container">
+	<form asp-action="createorupdatepost" method="post" enctype="multipart/form-data">
+	  <input asp-for="Id" type="hidden" />
+	  <div class="form-group">
+		<label>Title</label>
+		<input class="form-control" asp-for="Title" />
+	  </div>
+	  <div class="form-group">
+		<label>Summary</label>
+		<textarea class="form-control" asp-for="Summary" rows="10"></textarea>
+	  </div>
+	  <div class="form-group">
+		<label>Image</label>
+		<input asp-for="ImageUrl" type="hidden" />
+		<input class="form-control" asp-for="Image" />
+	  </div>
+	  <div class="form-group">
+		<label>Body</label>
+		<textarea asp-for="Body" id="post-editor"></textarea>
+	  </div>
+	  
+	  <button class="btn btn-primary" type="submit">Save</button>
+	</form>
+  </div>
+</section>
+
+@section scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.26.0/trumbowyg.min.js" integrity="sha512-ZfWLe+ZoWpbVvORQllwYHfi9jNHUMvXR4QhjL1I6IRPXkab2Rquag6R0Sc1SWUYTj20yPEVqmvCVkxLsDC3CRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+	  $('#post-editor').trumbowyg();
+	</script>
+}
